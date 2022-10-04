@@ -1,0 +1,10 @@
+1/10
+
+insertar clientes = se ingresan correctamente los clientes, se valida que la identificaion no este en uso.
+modificar clientes = se modifican los clientes en base de la identificacion(se expresa en la interfaz), se valida la existencia de la identidicacion
+borrar clientes = se borran el cliente sin problemas(se expresa el parametro), se consulta la existencia de esa identificacion.
+consultar clientes = se consulta individualmente el registro en base a la identificación, de consultan todos los registros si asi lo requiere, se limpia la pantalla si asi lo desea.
+insertar ventas = se calcula correctamente la cantidad del producto por el valor producto, se agregaron nuevos campos para almacenar el subtotal, descuento aplicado y valor total.
+
+3/10
+insertar proveedores = se ingresan correctamente los proveedores, se valida que el nit no este registrado.

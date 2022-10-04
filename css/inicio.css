@@ -1,0 +1,269 @@
+body{
+    padding: auto;
+    margin: auto;
+    font-family: cursive;
+    background-color: #000000;
+}
+
+.aviso{
+  color: red;
+  text-align: center;
+}
+
+h2{
+  color: white;
+  text-align: center;
+  font-size: 65px;
+  font-family: cursive;
+  margin-top: 10px;
+}
+
+h1{
+  font-family: cursive;
+}
+
+
+/*---------------------------------------------------LOGIN----------------------------------------------------------*/
+.login{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+
+.box-sign-in {
+    width: 350px;
+    min-width: 300px;
+    border-radius: 13px;
+    border: solid 1px white;
+    background: transparent;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+@media (max-width: 400px){
+  .login{
+    width: 90%;
+  }
+}
+
+
+.box-sign-in h1{
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+
+#logo{
+    width: 150px;
+    display: block;
+    margin: 20px auto;
+    border-radius: 100%;
+}
+
+/*---------------------------------------------------FONDO----------------------------------------------------------*/
+
+@import url("https://fonts.googleapis.com/css?family=Montserrat:700");
+.hero {
+  background-color: #000000;
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+.cube {
+  position: absolute;
+  top: 80vh;
+  left: 45vw;
+  width: 10px;
+  height: 10px;
+  border: solid 1px white;
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+  -webkit-transform: scale(0) rotate(0deg) translate(-50%, -50%);
+          transform: scale(0) rotate(0deg) translate(-50%, -50%);
+  -webkit-animation: cube 12s ease-in forwards infinite;
+          animation: cube 12s ease-in forwards infinite;
+}
+
+
+.cube:nth-child(2n) {
+  border-color: white;
+}
+
+
+.cube:nth-child(2) {
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+  left: 25vw;
+  top: 40vh;
+}
+
+
+.cube:nth-child(3) {
+  -webkit-animation-delay: 4s;
+          animation-delay: 4s;
+  left: 75vw;
+  top: 50vh;
+}
+
+
+.cube:nth-child(4) {
+  -webkit-animation-delay: 6s;
+          animation-delay: 6s;
+  left: 90vw;
+  top: 10vh;
+}
+
+
+.cube:nth-child(5) {
+  -webkit-animation-delay: 8s;
+          animation-delay: 8s;
+  left: 10vw;
+  top: 85vh;
+}
+
+
+.cube:nth-child(6) {
+  -webkit-animation-delay: 10s;
+          animation-delay: 10s;
+  left: 50vw;
+  top: 10vh;
+}
+
+
+@-webkit-keyframes cube {
+  from {
+    -webkit-transform: scale(0) rotate(0deg) translate(-50%, -50%);
+            transform: scale(0) rotate(0deg) translate(-50%, -50%);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: scale(20) rotate(960deg) translate(-50%, -50%);
+            transform: scale(20) rotate(960deg) translate(-50%, -50%);
+    opacity: 0;
+  }
+}
+
+
+@keyframes cube {
+  from {
+    -webkit-transform: scale(0) rotate(0deg) translate(-50%, -50%);
+            transform: scale(0) rotate(0deg) translate(-50%, -50%);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: scale(20) rotate(960deg) translate(-50%, -50%);
+            transform: scale(20) rotate(960deg) translate(-50%, -50%);
+    opacity: 0;
+  }
+}
+
+
+/*----------------------------------------BOTON-------------------------------------------------------------------*/
+button {
+  outline: none;
+  cursor: pointer;
+  border: solid 1px white;
+  padding: 0.9rem 2rem;
+  margin-left: 80px;
+  margin-top: 12px;
+  margin-bottom: 10px;
+  position: relative;
+  display: inline-block;
+  letter-spacing: 0.05rem;
+  font-weight: 700;
+  font-size: 20px;
+  border-radius: 500px;
+  overflow: hidden;
+  background-color: white;
+  color: ghostwhite;
+}
+
+ 
+button span {
+  position: relative;
+  z-index: 10;
+  transition: color 0.4s;
+}
+ 
+
+button:hover span {
+  color: black;
+}
+ 
+
+button::before,button::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+ 
+
+button::before {
+  content: "";
+  background: #000;
+  width: 120%;
+  left: -10%;
+  transform: skew(30deg);
+  transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+}
+ 
+
+button:hover::before {
+  transform: translate3d(100%, 0, 0);
+ }
+ 
+
+ /* ----------------------------------------------INPUTS---------------------------------------------------------*/
+
+
+.input-group {
+  position: relative;
+}
+ 
+
+.user {
+  border: solid 1px white;
+  border-radius: 1rem;
+  background: none;
+  padding: 1rem;
+  font-size: 1rem;
+  color: #f5f5f5;
+  transition: border 150ms cubic-bezier(0.4,0,0.2,1);
+  margin: 10px;
+}
+ 
+
+.user-label {
+  position: absolute;
+  left: 15px;
+  color: #e8e8e8;
+  pointer-events: none;
+  transform: translateY(1rem);
+  transition: 150ms cubic-bezier(0.4,0,0.2,1);
+}
+ 
+ 
+.user:focus, input:valid {
+  outline: none;
+  border: 1.5px solid #1a73e8;
+}
+ 
+
+.user:focus ~ label, input:valid ~ label {
+  transform: translateY(-50%) scale(0.8);
+  background-color: #212121;
+  padding: 0 .2em;
+  color: #2196f3;
+}
