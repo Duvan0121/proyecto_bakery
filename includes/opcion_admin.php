@@ -17,7 +17,7 @@ elseif($fila['rol'] == 0){
 }
 
 
-
+if (isset($_SESSION['user'])) {
 ?>
 
     <!DOCTYPE html>
@@ -65,6 +65,9 @@ elseif($fila['rol'] == 0){
 
 
 <?php
+}else{
+    header: "Location: ../login.php";
 
+}
 
 ?>
