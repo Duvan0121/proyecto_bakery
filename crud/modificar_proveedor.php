@@ -15,7 +15,7 @@ if (isset($_SESSION['user'])) {
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link rel="stylesheet" href="http://localhost/version1/css/formulario.css">
+        <link rel="stylesheet" href="http://localhost/proyecto_bakery/css/formulario.css">
         <title>Proveedores</title>
     </head>
 
@@ -23,52 +23,52 @@ if (isset($_SESSION['user'])) {
         <h1>Modificar un proveedor</h1>
         <div class="container">
             <div class="row">
-                <form action="../interfaz/cliente.php">
+                <form action="../interfaz/proveedor.php">
                     <button><span>volver</span></button>
                 </form>
             </div>
 
-            <p>Para poder modificar un cliente se usara como referencia la identificación</p>
-            <form action="modificar_cliente.php" method="post">
+            <p>Para poder modificar un proveedor se usara como referencia el NIT</p>
+            <form action="modificar_proveedor.php" method="post">
 
                 <div class="row">
                     <div class="col-25">
-                        <label for="fname">Nombre del cliente:</label>
+                        <label for="fname">Nombre del proveedor:</label>
                     </div>
                     <div class="col-75">
-                        <input type="text" class="input" placeholder="Digite aqui..." name="nom_cli" require>
+                        <input type="text" class="input" placeholder="Digite aqui..." name="nom_pro" required>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-25">
-                        <label for="lname">Documento de identidad: </label>
+                        <label for="lname">Nit: </label>
                     </div>
                     <div class="col-75">
-                        <input type="number" class="input" placeholder="Digite aquí..." name="id_cliente" require>
+                        <input type="number" class="input" placeholder="Digite aquí..." name="nit_pro" required>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-25">
-                        <label for="lname">Telefono del cliente: </label>
+                        <label for="lname">Telefono del proveedor: </label>
                     </div>
                     <div class="col-75">
-                        <input type="text" class="input" placeholder="Digite aquí..." name="tel_cli" require>
+                        <input type="text" class="input" placeholder="Digite aquí..." name="tel_pro" required>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-25">
-                        <label for="lname">Dirección del cliente: </label>
+                        <label for="lname">Dirección del proveedor </label>
                     </div>
                     <div class="col-75">
-                        <input type="text" class="input" placeholder="Digite aquí..." name="dir_cli" require>
+                        <input type="text" class="input" placeholder="Digite aquí..." name="dir_pro" required>
                     </div>
                 </div>
 
                 <div class="row">
-                    <button name="modificar_cliente" id="modificar_cliente"> <span>Modificar</span></button>
+                    <button name="modificar_proveedor" id="modificar_proveedor"> <span>Modificar</span></button>
                 </div>
 
             </form>
@@ -80,22 +80,22 @@ if (isset($_SESSION['user'])) {
     
     <?php
 
-    if (isset($_POST['modificar_cliente'])) {
-        $id_cliente = $_POST['id_cliente'];
-        $nom_cli = $_POST['nom_cli'];
-        $cel_cli = $_POST['tel_cli'];
-        $dir_cli = $_POST['dir_cli'];
+    if (isset($_POST['modificar_proveedor'])) {
+        $nit_pro = $_POST['nit_pro'];
+        $nom_pro = $_POST['nom_pro'];
+        $cel_pro = $_POST['tel_pro'];
+        $dir_pro = $_POST['dir_pro'];
 
-        $validar = "SELECT * FROM clientes WHERE id_cliente = '$id_cliente'";
+        $validar = "SELECT * FROM proveedores WHERE nit_proveedor = '$nit_pro'";
         $validando = $connection->query($validar);
         if(!$validando-> num_rows >0){
             ?>
                 <script>
-                    alert("La identificación no esta registrada");
+                    alert("El nit no esta registrado");
                 </script>
             <?php
         }else{
-        $sql1 = "UPDATE clientes SET nombre_cliente = '$nom_cli', celular_cliente = '$cel_cli', direccion_cliente = '$dir_cli' where id_cliente = '$id_cliente'";
+        $sql1 = "UPDATE proveedores SET nombre_proveedor = '$nom_pro', telefono_proveedor = '$cel_pro', direccion_proveedor = '$dir_pro' where nit_proveedor = '$nit_pro'";
         $resultado = mysqli_query($connection, $sql1);
 
         if (!$connection || !$sql1) {
@@ -108,7 +108,7 @@ if (isset($_SESSION['user'])) {
         } else {
         ?>
             <script>
-                alert("Cliente actualizado correctamente")
+                alert("Proveedor actualizado correctamente")
             </script>
 <?php
         }

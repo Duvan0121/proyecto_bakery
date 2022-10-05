@@ -16,34 +16,34 @@ if (isset($_SESSION['user'])) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <link rel="stylesheet" href="http://localhost/proyecto_bakery/css/formulario.css">
-        <title>Clientes</title>
+        <title>Proveedores</title>
     </head>
 
     <body>
-        <h1>Eliminar un cliente</h1>
+        <h1>Eliminar un proveedor</h1>
         <div class="container">
             <div class="row">
-                <form action="../interfaz/cliente.php">
+                <form action="../interfaz/proveedor.php">
                     <button><span>volver</span></button>
                 </form>
             </div>
 
-            <p>Para poder eliminar un cliente se usara como referencia la identificación</p>
-            <form action="eliminar_cliente.php" method="post">
+            <p>Para poder eliminar un proveedor se usara como referencia la identificación</p>
+            <form action="eliminar_proveedor.php" method="post">
 
                 <div class="row">
                     <div class="col-25">
-                        <label for="lname">Documento de identidad: </label>
+                        <label for="lname">Nit: </label>
                     </div>
                     <div class="col-75">
-                        <input type="number" class="input" placeholder="Digite aquí..." name="id_cliente" require>
-                    </div>
+                        <input type="number" class="input" placeholder="Digite aquí..." name="nit_pro" required>
+                    </div>  
                 </div>
 
 
 
                 <div class="row">
-                    <button name="borrar_cliente" id="borrar_cliente"> <span>Eliminar</span></button>
+                    <button name="borrar_proveedor" id="borrar_proveedor"> <span>Eliminar</span></button>
                 </div>
 
             </form>
@@ -54,11 +54,11 @@ if (isset($_SESSION['user'])) {
     </html>
     <?php
 
-    if (isset($_POST['borrar_cliente'])) {
-        $id_cli = $_POST['id_cliente'];
+    if (isset($_POST['borrar_proveedor'])) {
+        $nit_pro = $_POST['nit_pro'];
 
 
-        $validar = "SELECT * FROM clientes WHERE id_cliente = '$id_cli'";
+        $validar = "SELECT * FROM proveedores WHERE nit_proveedor = '$nit_pro'";
         $validando = $connection->query($validar);
         if (!$validando->num_rows > 0) {
     ?>
@@ -67,7 +67,7 @@ if (isset($_SESSION['user'])) {
             </script>
             <?php
         } else {
-            $instruccion_SQL = "DELETE FROM clientes where id_cliente= '$id_cli' ";
+            $instruccion_SQL = "DELETE FROM proveedores where nit_proveedor= '$nit_pro' ";
             $resultado = mysqli_query($connection, $instruccion_SQL);
 
             if (!$resultado || !$instruccion_SQL) {
@@ -78,7 +78,7 @@ if (isset($_SESSION['user'])) {
             <?php
             } else { ?>
                 <script>
-                    alert("Cliente borrado exitosamente");
+                    alert("Proveedor borrado exitosamente");
                 </script>
 <?php
             }

@@ -9,7 +9,7 @@ $mostrar = mysqli_query($con,"SELECT * FROM productos");
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <link rel="stylesheet" href="http://localhost/version1/css/formulario.css">
+  <link rel="stylesheet" href="http://localhost/proyecto_bakery/css/formulario.css">
   <title>Registrar_venta</title>
 </head>
 <body>
@@ -41,16 +41,16 @@ $mostrar = mysqli_query($con,"SELECT * FROM productos");
           <label for="lname">Digite la cantidad del producto: </label>
         </div>
         <div class="col-75">
-          <input type="text" class="input" name="can" placeholder="0" id="quantity_1" >
+          <input type="text" class="input" name="can" placeholder="0" id="quantity_1" required>
         </div>
       </div>
 
       <div class="row">
-        <div class="col-25">
+        <div class="col-25"> 
           <label for="lname">Digite el nombre del vendedor: </label>
         </div>
         <div class="col-75">
-          <input type="text" class="input"  placeholder="vargas...">
+          <input type="text" class="input"  placeholder="vargas..." required>
         </div>
       </div>
 
@@ -59,7 +59,7 @@ $mostrar = mysqli_query($con,"SELECT * FROM productos");
           <label for="lname">Digite el nombre del cliente: </label>
         </div>
         <div class="col-75">
-          <input type="text" class="input" placeholder="Nataly...">
+          <input type="text" class="input" placeholder="Nataly..." required>
         </div>
       </div>
 
@@ -68,7 +68,7 @@ $mostrar = mysqli_query($con,"SELECT * FROM productos");
           <label for="lname">Digite el porcentaje de descuento: </label>
         </div>
         <div class="col-75">
-          <input type="text" class="input"  placeholder="200..." id="descuento">
+          <input type="text" class="input"  placeholder="200..." id="descuento" required>
         </div>
       </div>
 
@@ -77,7 +77,7 @@ $mostrar = mysqli_query($con,"SELECT * FROM productos");
           <label for="lname">Digite el precio por unidad: </label>
         </div>
         <div class="col-75">
-          <input type="text" class="input" name="pre" id="price_1" placeholder="0"  step="0.001" >
+          <input type="text" class="input" name="pre" id="price_1" placeholder="0"  step="0.001" required>
         </div>
       </div>
 
@@ -86,7 +86,7 @@ $mostrar = mysqli_query($con,"SELECT * FROM productos");
           <label for="lname">precio total: </label>
         </div>
         <div class="col-75">
-          <input type="text" class="input" id="total_1" step="0.001"><br><br>
+          <input type="text" class="input" id="total_1" step="0.001" required><br><br>
         </div>
       </div>
       <div id="tipos"></div>
@@ -97,7 +97,7 @@ $mostrar = mysqli_query($con,"SELECT * FROM productos");
           <label for="lname">sub total: </label>
         </div>
         <div class="col-75">
-          <input type="text" class="input"   id="Totalsub">
+          <input type="text" class="input"   id="Totalsub" required>
         </div>
       </div>
       <div class="row">
@@ -105,7 +105,7 @@ $mostrar = mysqli_query($con,"SELECT * FROM productos");
           <label for="lname">lo que se descuenta: </label>
         </div>
         <div class="col-75">
-          <input type="text" class="input"   id="totaldescuento">
+          <input type="text" class="input"   id="totaldescuento" required>
         </div>
       </div>
       <div class="row">

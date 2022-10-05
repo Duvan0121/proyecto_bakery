@@ -16,12 +16,12 @@ error_reporting(0);
 $fila = mysqli_fetch_array($guardar);
 
 if($fila['rol'] == 1 ){
-    header("Location: http://localhost/Version1/includes/opcion_admin.php");
+    header("Location: http://localhost/proyecto_bakery/includes/opcion_admin.php");
 }
 
 
 elseif($fila['rol'] == 2){
-    header("Location: http://localhost/Version1/includes/opcion_basic.php");
+    header("Location: http://localhost/proyecto_bakery/includes/opcion_basic.php");
 }
 
 else{
@@ -34,7 +34,7 @@ else{
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>Login in</title>
     <link rel="stylesheet" media="all" href="css/inicio.css" />
-    <link rel="stylesheet" href="http://localhost/version1/css/inicio.css">
+    <link rel="stylesheet" href="http://localhost/proyecto_bakery/css/inicio.css">
 </head>
 
 <body>
