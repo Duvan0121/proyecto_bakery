@@ -26,6 +26,8 @@ if($fila['rol'] == 0){
 
     <body>
         <h1>PANEL BASICO</h1>
+        <?php echo $user; ?>
+
         <div class="hero">
             <div class="padre animated fadeInUp">
                 <h1>Opciones</h1>

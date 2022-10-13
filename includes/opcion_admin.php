@@ -36,7 +36,6 @@ if (isset($_SESSION['user'])) {
         <div class="hero">
             <div class="padre animated fadeInUp">
                 <h1>Opciones</h1>
-
                 <div class="opciones">
                     <button onclick="location.href='../interfaz/venta.php'"><span>VENTAS</span><i></i> </button>
                     <button onclick="location.href='../interfaz/venta.php'"><span>COMPRAS</span><i></i> </button>
