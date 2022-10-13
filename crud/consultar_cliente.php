@@ -16,7 +16,7 @@ if (isset($_SESSION['user'])) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <link rel="stylesheet" href="http://localhost/proyecto_bakery/css/formulario.css">
-        <title>Clientes</title>
+        <title>Clientes consulta</title>
     </head>
 
     <body>
@@ -73,7 +73,7 @@ if (isset($_SESSION['user'])) {
                 <table>
                     <thead>
                         <tr>
-                            <th>Identificacion del c</th>
+                            <th>Identificacion del cliente</th>
                             <th>Nombre del cliente</th>
                             <th>Celular del cliente</th>
                             <th>Dirección del cliente</th>
@@ -86,8 +86,8 @@ if (isset($_SESSION['user'])) {
                     while ($row = mysqli_fetch_array($result)) {
                     ?>
                         <tr>
-                            <td><?php echo $row['id_cliente'] ?></td>
                             <td><?php echo $row['nombre_cliente'] ?></td>
+                            <td><?php echo $row['id_cliente'] ?></td>
                             <td><?php echo $row['celular_cliente'] ?></td>
                             <td><?php echo $row['direccion_cliente'] ?></td>
                         </tr>
@@ -108,8 +108,9 @@ if (isset($_SESSION['user'])) {
             <table>
                 <thead>
                     <tr>
+                    <th>Identificacion del cliente</th>
                         <th>Nombre del cliente</th>
-                        <th>Identificacion del cliente</th>
+                        
                         <th>Celular del cliente</th>
                         <th>Dirección del cliente</th>
                     </tr>
