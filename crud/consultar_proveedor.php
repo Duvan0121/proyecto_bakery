@@ -16,7 +16,7 @@ if (isset($_SESSION['user'])) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <link rel="stylesheet" href="http://localhost/proyecto_bakery/css/formulario.css">
-        <title>Proveedores</title>
+        <title>Proveedores consultas</title>
     </head>
 
     <body>
@@ -35,14 +35,14 @@ if (isset($_SESSION['user'])) {
                         <label for="lname">Nit del proveedor: </label>
                     </div>
                     <div class="col-75">
-                        <input type="number" class="input" placeholder="Digite aquí..." name="nit_pro" required>
+                        <input type="number" class="input" placeholder="Digite aquí..." name="nit_pro" >
                     </div>
                 </div>
 
                 <div class="row">
                     <button name="consulta_proveedor_" id="consultar_proveedor"> <span>Consultar proveedor</span></button>
-                    <button name="consulta_general"><span>Consultar todos los proveedores</span></button>
-                    <button name="limpiar"><span>Limpiar pantalla</span></button>
+                    <button name="consulta_general_pro"><span>Consultar todos los proveedores</span></button>
+                    <button name="limpiare"><span>Limpiar pantalla</span></button>
                 </div>
             </form>
 
@@ -51,15 +51,15 @@ if (isset($_SESSION['user'])) {
 
     </html>
     <?php
-    if(isset($_POST['limpiar'])){
-        header("location: consultar_cliente.php");
+    if(isset($_POST['limpiare'])){
+        header("location: consultar_proveedor.php");
     }
 
 
 
     if (isset($_POST['consulta_proveedor_'])) {
         $nit_proveedor = $_POST['nit_pro'];
-        $validar = "SELECT * FROM proveedores WHERE nit_proveedor = '$nit_pro'";
+        $validar = "SELECT * FROM proveedores WHERE nit_proveedor = '$nit_proveedor'";
         $validando = $connection->query($validar);
         if (!$validando->num_rows > 0) {
     ?>
@@ -73,23 +73,23 @@ if (isset($_SESSION['user'])) {
                 <table>
                     <thead>
                         <tr>
-                            <th>Nombre del cliente</th>
-                            <th>Identificacion del cliente</th>
-                            <th>Celular del cliente</th>
-                            <th>Dirección del cliente</th>
+                            <th>Nit del proveedor</th>
+                            <th>Nombre del proveedor</th>
+                            <th>Celular del proveedor</th>
+                            <th>Dirección del proveedor</th>
                         </tr>
                     </thead>
                     <?php
-                    $id_cliente = $_POST['id_cli'];
-                    $sql = "SELECT * FROM clientes WHERE id_cliente = '$id_cliente' ";
+                    $nit_pro = $_POST['nit_pro'];
+                    $sql = "SELECT * FROM proveedores WHERE nit_proveedor = '$nit_pro' ";
                     $result = mysqli_query($connection, $sql);
                     while ($row = mysqli_fetch_array($result)) {
                     ?>
                         <tr>
-                            <td><?php echo $row['id_cliente'] ?></td>
-                            <td><?php echo $row['nombre_cliente'] ?></td>
-                            <td><?php echo $row['celular_cliente'] ?></td>
-                            <td><?php echo $row['direccion_cliente'] ?></td>
+                            <td><?php echo $row['nit_proveedor'] ?></td>
+                            <td><?php echo $row['nombre_proveedor'] ?></td>
+                            <td><?php echo $row['celular_proveedor'] ?></td>
+                            <td><?php echo $row['direccion_proveedor'] ?></td>
                         </tr>
                     <?php
                     }
@@ -102,28 +102,28 @@ if (isset($_SESSION['user'])) {
         }
     }
 
-    if (isset($_POST['consulta_general'])) {
+    if (isset($_POST['consulta_general_pro'])) {
         ?>
         <div id="main-container">
             <table>
                 <thead>
                     <tr>
-                        <th>Nombre del cliente</th>
-                        <th>Identificacion del cliente</th>
-                        <th>Celular del cliente</th>
-                        <th>Dirección del cliente</th>
+                        <th>Nit del proveedor</th>
+                        <th>Nombre del proveedor</th>
+                        <th>Celular del proveedor</th>
+                        <th>Dirección del proveedor</th>    
                     </tr>
                 </thead>
                 <?php
-                $sql = "SELECT * FROM clientes";
+                $sql = "SELECT * FROM proveedores";
                 $result = mysqli_query($connection, $sql);
                 while ($row = mysqli_fetch_array($result)) {
                 ?>
                     <tr>
-                        <td><?php echo $row['id_cliente'] ?></td>
-                        <td><?php echo $row['nombre_cliente'] ?></td>
-                        <td><?php echo $row['celular_cliente'] ?></td>
-                        <td><?php echo $row['direccion_cliente'] ?></td>
+                        <td><?php echo $row['nit_proveedor'] ?></td>
+                        <td><?php echo $row['nombre_proveedor'] ?></td>
+                        <td><?php echo $row['celular_proveedor'] ?></td>
+                        <td><?php echo $row['direccion_proveedor'] ?></td>
                     </tr>
                 <?php
                 }
