@@ -43,7 +43,9 @@ if (isset($_SESSION['user'])) {
                     <button onclick="location.href='../interfaz/cliente.php'"><span>CLIENTES</span><i></i> </button>
                     <button onclick="location.href='../interfaz/proveedor.php'"><span>PROVEEDORES</span><i></i> </button>
                     <button onclick="location.href='../interfaz/venta.php'"><span>INVENTARIO</span><i></i> </button>
-
+                    <button onclick="location.href='../interfaz/socio.php'"><span>SOCIOS</span> <i></i></button>
+                    <button onclick="location.href='../interfaz/producto.php'"><span>PRODUCTOS</span> <i></i> </button>     
+                    <button onclick="location.href='../interfaz/insumo.php'"><span>INSUMOS</span> <i></i> </button>             
                     <button onclick="location.href='../includes/salir.php'"><span>Cerrar Sesión</span><i></i> </button>
                 </div>
             </div>

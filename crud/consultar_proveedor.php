@@ -29,7 +29,7 @@ if (isset($_SESSION['user'])) {
             </div>
 
             <h1>Consulta individual</h1>
-            <form action="consultar_cliente.php" method="post">
+            <form action="consultar_proveedor.php" method="post">
                 <div class="row">
                     <div class="col-25">
                         <label for="lname">Nit del proveedor: </label>
@@ -88,7 +88,7 @@ if (isset($_SESSION['user'])) {
                         <tr>
                             <td><?php echo $row['nit_proveedor'] ?></td>
                             <td><?php echo $row['nombre_proveedor'] ?></td>
-                            <td><?php echo $row['celular_proveedor'] ?></td>
+                            <td><?php echo $row['telefono_proveedor'] ?></td>
                             <td><?php echo $row['direccion_proveedor'] ?></td>
                         </tr>
                     <?php
@@ -110,7 +110,7 @@ if (isset($_SESSION['user'])) {
                     <tr>
                         <th>Nit del proveedor</th>
                         <th>Nombre del proveedor</th>
-                        <th>Celular del proveedor</th>
+                        <th>Telefono del proveedor</th>
                         <th>Dirección del proveedor</th>    
                     </tr>
                 </thead>
@@ -122,7 +122,7 @@ if (isset($_SESSION['user'])) {
                     <tr>
                         <td><?php echo $row['nit_proveedor'] ?></td>
                         <td><?php echo $row['nombre_proveedor'] ?></td>
-                        <td><?php echo $row['celular_proveedor'] ?></td>
+                        <td><?php echo $row['telefono_proveedor'] ?></td>
                         <td><?php echo $row['direccion_proveedor'] ?></td>
                     </tr>
                 <?php
