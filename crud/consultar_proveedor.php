@@ -16,14 +16,14 @@ if (isset($_SESSION['user'])) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <link rel="stylesheet" href="http://localhost/proyecto_bakery/css/formulario.css">
-        <title>Clientes</title>
+        <title>Proveedores</title>
     </head>
 
     <body>
-        <h1>Consultar clientes</h1>
+        <h1>Consultar proveedores</h1>
         <div class="container">
             <div class="row">
-                <form action="../interfaz/cliente.php">
+                <form action="../interfaz/proveedor.php">
                     <button><span>volver</span></button>
                 </form>
             </div>
@@ -32,16 +32,16 @@ if (isset($_SESSION['user'])) {
             <form action="consultar_cliente.php" method="post">
                 <div class="row">
                     <div class="col-25">
-                        <label for="lname">Identificacion del cliente: </label>
+                        <label for="lname">Nit del proveedor: </label>
                     </div>
                     <div class="col-75">
-                        <input type="number" class="input" placeholder="Digite aquí..." name="id_cli" require>
+                        <input type="number" class="input" placeholder="Digite aquí..." name="nit_pro" required>
                     </div>
                 </div>
 
                 <div class="row">
-                    <button name="consulta_cliente_" id="consultar_cliente"> <span>Consultar cliente</span></button>
-                    <button name="consulta_general"><span>Consultar todos los clientes</span></button>
+                    <button name="consulta_proveedor_" id="consultar_proveedor"> <span>Consultar proveedor</span></button>
+                    <button name="consulta_general"><span>Consultar todos los proveedores</span></button>
                     <button name="limpiar"><span>Limpiar pantalla</span></button>
                 </div>
             </form>
@@ -57,9 +57,9 @@ if (isset($_SESSION['user'])) {
 
 
 
-    if (isset($_POST['consulta_cliente_'])) {
-        $id_cliente = $_POST['id_cli'];
-        $validar = "SELECT * FROM clientes WHERE id_cliente = '$id_cliente'";
+    if (isset($_POST['consulta_proveedor_'])) {
+        $nit_proveedor = $_POST['nit_pro'];
+        $validar = "SELECT * FROM proveedores WHERE nit_proveedor = '$nit_pro'";
         $validando = $connection->query($validar);
         if (!$validando->num_rows > 0) {
     ?>
@@ -73,8 +73,8 @@ if (isset($_SESSION['user'])) {
                 <table>
                     <thead>
                         <tr>
-                            <th>Identificacion del c</th>
                             <th>Nombre del cliente</th>
+                            <th>Identificacion del cliente</th>
                             <th>Celular del cliente</th>
                             <th>Dirección del cliente</th>
                         </tr>
